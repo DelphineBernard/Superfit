@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS "role", "user", "product";
+DROP TABLE IF EXISTS "role", "user", "product" CASCADE;
 
 CREATE TABLE "role" (
   "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -12,7 +12,7 @@ CREATE TABLE "user" (
   "email" TEXT UNIQUE NOT NULL,
   "password" TEXT NOT NULL,
   "telephone" TEXT NOT NULL,
-  "adresse" TEXT NOT NULL,
+  "address" TEXT NOT NULL,
   "role_id" INTEGER REFERENCES "role"("id") NOT NULL
 );
 
@@ -22,7 +22,7 @@ CREATE TABLE "product" (
   "weight" FLOAT NOT NULL,
   "price" FLOAT NOT NULL,
   "description" TEXT NOT NULL,
-  "user_id"  INTEGER REFERENCES "user"("id")
+  "user_id" INTEGER REFERENCES "user"("id")
 );
 
 COMMIT;
