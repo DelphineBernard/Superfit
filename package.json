@@ -1,0 +1,22 @@
+{
+  "name": "s07-superfit-delphinebernard",
+  "version": "1.0.0",
+  "description": "Vous avez reçu cet email d'un client :",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Cthulu/S07-SuperFit-DelphineBernard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Cthulu/S07-SuperFit-DelphineBernard/issues"
+  },
+  "homepage": "https://github.com/O-clock-Cthulu/S07-SuperFit-DelphineBernard#readme"
+}

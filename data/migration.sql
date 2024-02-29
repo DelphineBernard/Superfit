@@ -1,0 +1,28 @@
+BEGIN;
+
+DROP TABLE IF EXISTS "role", "user", "product";
+
+CREATE TABLE "role" (
+  "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  "name" TEXT NOT NULL
+);
+
+CREATE TABLE "user" (
+  "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  "email" TEXT UNIQUE NOT NULL,
+  "password" TEXT NOT NULL,
+  "telephone" TEXT NOT NULL,
+  "adresse" TEXT NOT NULL,
+  "role_id" INTEGER REFERENCES "role"("id") NOT NULL
+);
+
+CREATE TABLE "product" (
+  "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  "name" TEXT NOT NULL,
+  "weight" FLOAT NOT NULL,
+  "price" FLOAT NOT NULL,
+  "description" TEXT NOT NULL,
+  "user_id"  INTEGER REFERENCES "user"("id")
+);
+
+COMMIT;
