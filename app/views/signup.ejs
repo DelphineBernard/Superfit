@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+<h1 class="title">Inscription</h1>
+<form action="/signup" method="POST">
+    <% if (typeof alert !== 'undefined') { %>
+        <p class="message message--error" role="alert">Erreur : <%= alert %></p>
+      <% } %>
+    <label class="form-field">
+      <img src="/img/user.svg" alt="user"> <span title="Champ obligatoire"></span>
+        <input class="form-input" type="text" name="email" placeholder="Email *" required>
+      </label>
+      <label class="form-field">
+        <img src="/img/password.svg" alt="password"> <span title="Champ obligatoire"></span>
+        <input class="form-input" type="password" name="password" placeholder="Mot de passe *" required>
+      </label>
+      <label class="form-field">
+        <img src="/img/password.svg" alt="password"> <span title="Champ obligatoire"></span>
+        <input class="form-input" type="password" name="password2" placeholder="Confirmer le mot de passe *" required>
+      </label>
+  <button type="submit">S'inscrire</button>
+</form>
+<%- include('partials/footer') %>

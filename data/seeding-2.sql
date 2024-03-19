@@ -1,6 +1,6 @@
 BEGIN;
 
-TRUNCATE TABLE "product";
+TRUNCATE TABLE "product" CASCADE;
 
 INSERT INTO "product" ("name", "weight", "price", "description") VALUES
 

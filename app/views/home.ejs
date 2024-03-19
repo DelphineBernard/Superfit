@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+
+<h1 class="logo logo-part1">Super<span class="logo logo-part2">fit</span></h1>
+
+<img src="/img/superfit.jpg" class="superfit">
+
+<h2 id="products">Découvrez les produits de notre catalogue</h2>
+
+    <ul class="product__list">
+        <% for(let product of products) { %>
+        <li class="product__item"><span class="product-title"><%= product.name %></span>
+            <%= product.description.length > 80 ? product.description.substring(0, 80) + '...' : product.description %>
+            <a class="product__link" href=<%=`/products/${product.id}`%>>Consulter la fiche produit</a>
+        </li>
+        <% } %>        
+    </ul>
+
+
+<%- include('partials/footer') %>

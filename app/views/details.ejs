@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+
+<h1 class="title"><%= product.name %></h1>
+
+<ul class="product">
+    <li class="product-info"><span class="product-info__title">Description</span> <%= product.description %></li>
+    <li class="product-info"><span class="product-info__title">Poids</span> <%= product.weight %> kg</li>
+    <li class="product-info"><span class="product-info__title">Prix</span> <%= product.price %> €</li>
+</ul>
+
+<a href="/#products">Revenir à la liste des produits</a>
+
+<%- include('partials/footer') %>

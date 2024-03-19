@@ -4,16 +4,17 @@ DROP TABLE IF EXISTS "role", "user", "product" CASCADE;
 
 CREATE TABLE "role" (
   "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  "name" TEXT NOT NULL
+  "name" TEXT NOT NULL,
+  "value" BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE "user" (
   "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   "email" TEXT UNIQUE NOT NULL,
   "password" TEXT NOT NULL,
-  "telephone" TEXT NOT NULL,
-  "address" TEXT NOT NULL,
-  "role_id" INTEGER REFERENCES "role"("id") NOT NULL
+  "telephone" TEXT,
+  "address" TEXT,
+  "role_id" INTEGER REFERENCES "role"("id") DEFAULT 1
 );
 
 CREATE TABLE "product" (
