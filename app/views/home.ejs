@@ -9,7 +9,7 @@
     <ul class="product__list">
         <% for(let product of products) { %>
         <li class="product__item"><span class="product-title"><%= product.name %></span>
-            <%= product.description.length > 80 ? product.description.substring(0, 80) + '...' : product.description %>
+            <p class="product__desc"><%= product.description.length > 80 ? product.description.substring(0, 80) + '...' : product.description %></p>
             <a class="product__link" href=<%=`/products/${product.id}`%>>Consulter la fiche produit</a>
         </li>
         <% } %>        

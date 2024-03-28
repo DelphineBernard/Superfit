@@ -3,10 +3,14 @@
 <h1 class="title"><%= product.name %></h1>
 
 <ul class="product">
-    <li class="product-info"><span class="product-info__title">Description</span> <%= product.description %></li>
-    <li class="product-info"><span class="product-info__title">Poids</span> <%= product.weight %> kg</li>
-    <li class="product-info"><span class="product-info__title">Prix</span> <%= product.price %> €</li>
+    <li class="product-info"><span class="product-info__title">Description</span><span> <%= product.description %></span></li>
+    <li class="product-info"><span class="product-info__title">Poids</span><span> <%= product.weight %> kg</span> </li>
+    <li class="product-info"><span class="product-info__title">Prix</span><span> <%= product.price %> €</span> </li>
 </ul>
+
+<% if (locals.role === "Administrateur"){ %>
+    <a class="product-action" href="/products/<%= product.id %>" data-method="delete">Supprimer le produit</a>
+<% } %>
 
 <a href="/#products">Revenir à la liste des produits</a>
 
