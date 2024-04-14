@@ -9,31 +9,35 @@ body {
 main {
     font-weight: 400;
     font-style: normal;
-    padding: 6rem 4rem;
+    padding: 6rem 2rem;
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
+    min-height: 60vh;
 }
 
 nav {
-    padding: 0 4rem;
     height: 4rem;
     display: flex;
     align-items: center;
-    column-gap: 3rem;
     justify-content: space-between;
     background-color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
     font-style: normal;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    padding: 0 1rem;
 }
 
 a {
     text-decoration: none;
     padding: 0.5rem;
     color: #3a1d0e;
-    
+}
+
+a:hover {
+    text-decoration: underline;
+    color: black;
 }
 
 nav > a:first-child{
@@ -52,11 +56,21 @@ img{
     display: flex;
 }
 
+.logo-text {
+    display: none;
+    font-size: 1.2rem;
+}
+
+@media screen and (min-width: 576px)  {
+    .logo-text {
+        display: inline;
+    }
+}
 
 /* page home  */
 
 .logo {
-    font-size: 5rem;
+    font-size: 4rem;
 }
 
 .logo-part1 {
@@ -76,19 +90,28 @@ img{
     column-gap: 4rem;
 }
 
+@media screen and (min-width: 576px) {
+    .product__list {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-flow: auto;
+    }
+}
+
 .product__item {
     list-style-type: none;
     display: flex;
     row-gap: 2rem;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: stretch;
+    justify-content: flex-end;
     border: 1px solid rgba(128, 128, 128, 0.568);
     border-radius: 1rem;
     padding: 2rem;
     background-color: white;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     min-width: 25%;
+    min-height: 80%;
 }
 
 /* ------------------------------ */
@@ -96,14 +119,20 @@ img{
 /* page details */
 
 .product {
-    width: 60%;
+    width: 90%;
     margin: 3rem auto;
-    padding: 3rem;
+    padding: 2rem 1rem;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+@media screen and (min-width: 576px)  {
+    .product {
+        width: 70%;
+    }
 }
 
 .product-info {
@@ -126,7 +155,8 @@ img{
 .title {
     font-size: 2.5rem;
     color: #5a4242;
-    text-decoration:underline;   
+    text-decoration:underline;
+    line-height: 2rem;   
 }
 
 .product-title {
@@ -136,7 +166,7 @@ img{
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 2rem auto;
 }
 
@@ -149,13 +179,20 @@ h2 {
     color: white;
     border: 1px solid #915959;
     border-radius: 0.5rem;
+    width: fit-content;
+    align-self: center;
 }
 
 .superfit {
-    width: 50%;
-    background-color: white;
+    width: 100%;
     align-self: center;
     filter: brightness(97%);
+}
+
+@media screen and (min-width: 576px)  {
+    .superfit {
+        width: 80%;
+    }
 }
 
 form {
@@ -165,7 +202,7 @@ form {
     justify-content: center;
     row-gap: 2rem;
     margin: 3rem auto;
-    padding: 5rem 3rem 3rem;
+    padding: 2rem 3rem 3rem;
     border-radius: 1rem;
     background-color: #eadede;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -179,6 +216,7 @@ button {
     border-radius: 1rem;
     font-size: 1rem;
     border: 2px solid #eadede;
+    cursor: pointer;
 }
 
 /* ----------------------------- */
@@ -187,10 +225,17 @@ button {
 
 .form-field {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
     align-items: center;
     column-gap: 2rem;
-    width: 90%;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px)  {
+    .form-field {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
 }
 
 .form-input {
@@ -198,22 +243,20 @@ button {
     border-radius: 1rem;
     border: none;
     padding: 0.5rem;
-    width: 70%;
+    width: 100%;
     justify-self: stretch;
 }
 
 .product-action {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     row-gap: 1rem;
     border: 1px solid #834d4e;
     border-radius: 1rem;
     width: fit-content;
     padding: 1rem;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 /* ----------------------------- */
@@ -222,6 +265,7 @@ footer {
     padding: 4rem;
     background-color: #2b2d40;
     color: white;
+    height: 15vh;
 }
 
 footer p {

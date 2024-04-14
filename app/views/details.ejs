@@ -8,10 +8,6 @@
     <li class="product-info"><span class="product-info__title">Prix</span><span> <%= product.price %> €</span> </li>
 </ul>
 
-<% if (locals.role === "Administrateur"){ %>
-    <a class="product-action" href="/products/<%= product.id %>" data-method="delete">Supprimer le produit</a>
-<% } %>
-
 <a href="/#products">Revenir à la liste des produits</a>
 
 <%- include('partials/footer') %>

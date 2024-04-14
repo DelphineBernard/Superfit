@@ -1,8 +1,9 @@
 <%- include('partials/header') %>
 
-<h1 class="title">Profil : <%= locals.user %></h1>
+<h1 class="title">Profil</h1>
 
-<p>Vous avez les droits : <%= locals.role %></p> 
+<p>Identifiant : <span class="infos"><%= locals.user %></span></p>
+<p>Accès : <span class="infos"><%= locals.role %></span></p> 
 
 <% if (locals.role === "Administrateur"){ %>
 <a class="product-action" href="/products/add"><img src="/img/add.svg" alt="">Ajouter un produit</a>

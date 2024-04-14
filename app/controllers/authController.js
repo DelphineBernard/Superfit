@@ -49,9 +49,9 @@ const authController = {
 
 
             // CODE POUR PASSER UN USER ADMIN
-            // const admin = await User.update({role_id: 2}, {
-            //     where: {id: 1}
-            // });
+            const admin = await User.update({role_id: 2}, {
+                where: {id: 1}
+            });
             
             
             const userIsAdmin = foundUser.role_id === 2
